@@ -30,8 +30,6 @@ func SearchArtist(artist string) ArtistResult {
 
 	xml.Unmarshal(bytes, &result)
 
-	// log.Printf("%#v", result)
-
 	return result
 }
 
