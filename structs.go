@@ -5,8 +5,8 @@ type ArtistResult struct {
 }
 
 type Artist struct {
-	Name string `xml:"name"`
-	Id string `xml:"id,attr"`
+	Name           string `xml:"name"`
+	Id             string `xml:"id,attr"`
 	Disambiguation string `xml:"disambiguation"`
 }
 
@@ -16,5 +16,5 @@ type ReleaseResult struct {
 
 type Release struct {
 	Title string `xml:"title"`
-	Id string `xml:"id,attr"`
+	Id    string `xml:"id,attr"`
 }

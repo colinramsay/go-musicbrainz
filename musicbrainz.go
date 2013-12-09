@@ -2,9 +2,9 @@ package musicbrainz
 
 import (
 	"encoding/xml"
-	"net/http"
-	"log"
 	"io/ioutil"
+	"log"
+	"net/http"
 	"net/url"
 )
 
