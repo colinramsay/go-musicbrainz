@@ -9,6 +9,7 @@ import (
 )
 
 func MakeQuery(url string) []byte {
+	log.Printf("Getting URL %s", url)
 	res, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
