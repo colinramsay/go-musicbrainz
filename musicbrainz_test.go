@@ -17,7 +17,9 @@ func TestArtistSearch(t *testing.T) {
 func TestGetReleases(t *testing.T) {
 	result := GetReleases("3bcff06f-675a-451f-9075-99e8657047e8")
 
-	if len(result.Releases) >= 103 {
-		t.Errorf("Not enough releases")
+	release_count := len(result.Releases)
+
+	if release_count >= 103 || release_count < 5 {
+		t.Errorf("Wrong number of releases: %d", release_count)
 	}
 }
