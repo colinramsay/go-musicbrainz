@@ -11,7 +11,7 @@ type Artist struct {
 }
 
 type ReleaseResult struct {
-	Releases []Release `xml:"release-list>release"`
+	Releases []Release `xml:"release-group-list>release-group"`
 }
 
 type Release struct {

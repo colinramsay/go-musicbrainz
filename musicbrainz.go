@@ -36,7 +36,7 @@ func SearchArtist(artist string) ArtistResult {
 
 func GetReleases(artistId string) ReleaseResult {
 	result := ReleaseResult{}
-	bytes := MakeQuery("http://musicbrainz.org/ws/2/release?artist=" + artistId)
+	bytes := MakeQuery("http://musicbrainz.org/ws/2/release-group?artist=" + artistId + "&type=album")
 
 	xml.Unmarshal(bytes, &result)
 
