@@ -5,16 +5,18 @@ type ArtistResult struct {
 }
 
 type Artist struct {
-	Name           string `xml:"name"`
-	Id             string `xml:"id,attr"`
-	Disambiguation string `xml:"disambiguation"`
+	Name           string    `xml:"name"`
+	ArtistId       string    `xml:"id,attr"`
+	Releases       []Release `xml:"release-group-list>release-group"`
+	Disambiguation string    `xml:"disambiguation"`
 }
 
 type ReleaseResult struct {
-	Releases []Release `xml:"release-group-list>release-group"`
+	Artist Artist `xml:"artist"`
 }
 
 type Release struct {
-	Title string `xml:"title"`
-	Id    string `xml:"id,attr"`
+	Title       string `xml:"title"`
+	ReleaseId   string `xml:"id,attr"`
+	ReleaseDate string `xml:"first-release-date"`
 }

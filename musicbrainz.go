@@ -36,9 +36,13 @@ func SearchArtist(artist string) ArtistResult {
 
 func GetReleases(artistId string) ReleaseResult {
 	result := ReleaseResult{}
-	bytes := MakeQuery("http://musicbrainz.org/ws/2/release-group?artist=" + artistId + "&type=album")
+	bytes := MakeQuery("http://musicbrainz.org/ws/2/artist/" + artistId + "?inc=release-groups")
 
-	xml.Unmarshal(bytes, &result)
+	err := xml.Unmarshal(bytes, &result)
+
+	if err != nil {
+		log.Printf("error: %v", err)
+	}
 
 	return result
 }
